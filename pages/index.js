@@ -11,6 +11,7 @@ export default function Home() {
     (async () => {
       fetch('/api/hello');
       fetch('/api/hello2');
+      fetch('/api/hello-cached');
     })();
   }, [])
   
