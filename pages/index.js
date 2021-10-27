@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Create Next App foo</title>
       </Head>
 
       <main className={styles.main}>
