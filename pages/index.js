@@ -2,9 +2,18 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useUser } from '@auth0/nextjs-auth0';
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
   const { user } = useUser();
+  
+  useEffect(() => {
+    (async () => {
+      fetch('/api/hello');
+      fetch('/api/hello2');
+    })();
+  }, [])
+  
   return (
     <div className={styles.container}>
       <Head>
