@@ -1,17 +1,16 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { useUser } from '@auth0/nextjs-auth0';
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { user } = useUser();
+  const [ user, setUser ] = useState(null);
   
   useEffect(() => {
     (async () => {
-      fetch('/api/hello');
-      fetch('/api/hello2');
-      fetch('/api/hello-cached');
+      const response = await fetch('/api/hello');
+      const data = await response.json();
+      setUser(data);
     })();
   }, [])
   
@@ -27,7 +26,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          { !!user ? <Link href="/api/auth/logout">logout</Link> : <Link href="/api/auth/login">login</Link> }
+          { user?.name ? <Link href="/api/auth/logout">logout</Link> : <Link href="/api/auth/login">login</Link> }
         </p>
       </main>
     </div>
