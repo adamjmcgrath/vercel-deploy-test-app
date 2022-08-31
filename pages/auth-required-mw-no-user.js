@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import {useUser, withPageAuthRequired} from "@auth0/nextjs-auth0";
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const { user } = useUser();
 
   return (
     <div className={styles.container}>
@@ -14,12 +12,10 @@ export default function Home() {
 
       <main className={styles.main} style={{ whiteSpace: 'pre', fontSize: '20px'}}>
         <h1 className={styles.title}>
-          Auth Required (Middleware)
+          Auth Required (Middleware) no user
         </h1>
         <p className={styles.description}>
-          <code>{JSON.stringify(user, null, 2)}</code><br/>
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/"><button>Home</button></a>
+          <p>Some products or something...</p>
         </p>
       </main>
     </div>

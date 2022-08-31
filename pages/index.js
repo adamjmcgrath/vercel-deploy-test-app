@@ -3,7 +3,7 @@ import { useUser } from "@auth0/nextjs-auth0";
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const { user, isLoading } = useUser(null);
+  const { user } = useUser(null);
 
   return (
     <div className={styles.container}>
