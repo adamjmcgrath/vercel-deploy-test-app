@@ -1,23 +1,14 @@
 import Head from 'next/head'
+import { useUser } from "@auth0/nextjs-auth0";
 import styles from '../styles/Home.module.css'
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [ user, setUser ] = useState(null);
-  
-  useEffect(() => {
-    (async () => {
-      const response = await fetch('/api/hello');
-      const data = await response.json();
-      setUser(data);
-    })();
-  }, [])
-  
+  const { user, isLoading } = useUser(null);
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App foo</title>
+        <title>Create Next App</title>
       </Head>
 
       <main className={styles.main}>
@@ -26,7 +17,12 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          { user?.name ? <Link href="/api/auth/logout">logout</Link> : <Link href="/api/auth/login">login</Link> }
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/auth-required"><button>Auth Required</button></a><br/>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/auth-required-mw"><button>Auth Required (Middleware)</button></a><br/>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          { user && <a href="/api/auth/logout"><button>logout</button></a>}
         </p>
       </main>
     </div>

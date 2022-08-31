@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.9.1",
-    "next": "^12.2.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@auth0/nextjs-auth0": "file:auth0-nextjs-auth0-1.9.1-mw.5.tgz",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "7.30.0",
