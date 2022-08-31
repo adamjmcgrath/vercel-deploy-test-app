@@ -22,6 +22,8 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/auth-required-mw"><button>Auth Required (Middleware)</button></a><br/>
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/auth-required-mw-no-user"><button>Auth Required (Middleware) no user</button></a><br/>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           { user && <a href="/api/auth/logout"><button>logout</button></a>}
         </p>
       </main>
