@@ -18,6 +18,7 @@ export default function Home() {
         </h1>
         <p className={styles.description}>
           <code>{JSON.stringify(user, null, 2)}</code><br/>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/"><button>Home</button></a>
         </p>
       </main>
