@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {useUser, withPageAuthRequired} from "@auth0/nextjs-auth0";
+import {useUser} from "@auth0/nextjs-auth0";
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
