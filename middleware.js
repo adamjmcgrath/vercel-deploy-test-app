@@ -6,6 +6,7 @@ export async function middleware(req) {
   const user = await getSession(req, res);
 
   console.log('cookie', req.headers.get('cookie'));
+  const cookie = req.headers.get('cookie');
 
   return new NextResponse(
       JSON.stringify({ cookie, length: cookie?.length }),
