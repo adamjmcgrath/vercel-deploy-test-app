@@ -9,7 +9,7 @@ export async function middleware(req) {
   const cookie = req.headers.get('cookie');
 
   return new NextResponse(
-      JSON.stringify({ cookie, length: cookie?.length }),
+      JSON.stringify({ cookie, length: cookie?.length, user }),
       { headers: { 'content-type': 'application/json' } }
   )
 
