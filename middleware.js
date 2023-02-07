@@ -5,7 +5,7 @@ export async function middleware(req, ev) {
   const res = NextResponse.next();
   const user = await getSession(req, res);
 
-  console.log(await withMiddlewareAuthRequired(req, ev));
+  console.log(await withMiddlewareAuthRequired()(req, ev));
   console.log('cookie', req.headers.get('cookie'));
   const cookie = req.headers.get('cookie');
 
