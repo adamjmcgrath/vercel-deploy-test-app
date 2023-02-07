@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { useUser } from "@auth0/nextjs-auth0";
-import getInstance from '../lib/auth0'
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -26,4 +26,4 @@ export default function Home() {
   )
 }
 
-export const getServerSideProps = getInstance().withPageAuthRequired();
+export const getServerSideProps = withPageAuthRequired();

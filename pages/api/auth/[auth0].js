@@ -1,3 +1,11 @@
-import getInstance from '../../../lib/auth0';
+import { randomBytes } from 'crypto';
+import { handleAuth, handleCallback } from '@auth0/nextjs-auth0';
 
-export default getInstance().handleAuth();
+export default handleAuth({
+  callback: handleCallback({
+    afterCallback(req, res, session, state) {
+      session.user.customProp = randomBytes(2000).toString('base64');
+      return session;
+    }
+  }),
+});
