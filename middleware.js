@@ -5,9 +5,7 @@ export async function middleware(req) {
   const res = NextResponse.next();
   const user = await getSession(req, res);
 
-  console.log('user', user);
-  console.log('cookie header', req.headers.get('cookie'));
-  console.log('cookies', JSON.stringify(req.cookies.getAll(), null, 2));
+  console.log('cookie', req.headers.get('cookie'));
 
   return res;
 
